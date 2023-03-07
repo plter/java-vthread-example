@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'com.plter'
@@ -16,6 +17,11 @@ dependencies {
 
 tasks.withType(JavaCompile).configureEach {
     options.compilerArgs << "--enable-preview"
+}
+
+application {
+    mainClass = "com.plter.examples.vthread.Main"
+    applicationDefaultJvmArgs = ["--enable-preview"]
 }
 
 test {
